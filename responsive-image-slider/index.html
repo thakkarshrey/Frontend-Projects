@@ -7,6 +7,62 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Responsive image slider
+    <div class="container">
+      <div class="slider">
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_01.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_02.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_03.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_04.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_05.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+        <div
+          class="slides"
+          style="--img: url('public/assets/images/img_06.jpg')"
+        >
+          <div class="content"></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <span class="prev"></span>
+        <span class="next"></span>
+      </div>
+    </div>
   </body>
+  <script>
+    let next = document.querySelector(".next");
+    let prev = document.querySelector(".prev");
+    let slider = document.querySelector(".slider");
+    next.addEventListener("click", function () {
+      let slides = document.querySelectorAll(".slides");
+      slider.appendChild(slides[0]);
+    });
+    prev.addEventListener("click", function () {
+      let slides = document.querySelectorAll(".slides");
+      slider.prepend(slides[slides.length - 1]);
+    });
+  </script>
 </html>
