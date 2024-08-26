@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google fonts (montserrat family) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google fonts (montserrat family) -->
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Services</a>
+      <div class="navbar__indicator"></div>
+    </nav>
+  </body>
+  <script>
+    let marker = document.querySelector(".navbar__indicator");
+    let navbar = document.querySelector(".navbar");
+    let nabvarItems = document.querySelectorAll(".navbar a");
+
+    navbar.onclick = function () {
+      marker.classList.toggle("navbar--indicator-effect");
+    };
+
+    function indicator(e) {
+      marker.style.left = e.offsetLeft + "px";
+      marker.style.width = e.offsetWidth + "px";
+    }
+
+    nabvarItems.forEach((element) => {
+      element.addEventListener("click", (event) => {
+        indicator(event.target);
+      });
+    });
+  </script>
+</html>

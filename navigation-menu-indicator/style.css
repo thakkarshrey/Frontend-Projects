@@ -1,0 +1,82 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151517;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  background-color: #222327;
+  padding: 1rem 4rem;
+  display: flex;
+  gap: 1.8rem;
+}
+
+.navbar > a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  padding: 0 2rem;
+  z-index: 9;
+  transition: 0.5s;
+}
+
+.navbar__indicator {
+  position: absolute;
+  height: 75px;
+  background-color: #29fd53;
+  z-index: 1;
+  width: 150px;
+  transition: 0.5s;
+}
+
+.navbar__indicator::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  border-radius: 15px;
+  left: -30px;
+  background-color: #29fd53;
+  box-shadow: 15px 30px #29fd53, -15px 15px #222327, 5px 60px #29fd53,
+    -10px 45px #222327;
+  transition: 0.5s;
+}
+
+.navbar--indicator-effect::before {
+  left: -10px;
+  box-shadow: -15px 30px #29fd53, -10px 15px #222327, -5px 60px #29fd53,
+    -20px 45px #222327;
+}
+
+.navbar__indicator::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  border-radius: 15px;
+  right: -30px;
+  background-color: #29fd53;
+  box-shadow: 5px 30px #29fd53, 15px 15px #222327, -15px 60px #29fd53,
+    10px 45px #222327;
+  transition: 0.5s;
+}
+
+.navbar--indicator-effect::after {
+  right: -20px;
+  box-shadow: 10px 30px #29fd53, 15px 15px #222327, 20px 60px #29fd53,
+    25px 45px #222327;
+}
