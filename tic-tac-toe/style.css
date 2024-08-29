@@ -1,0 +1,30 @@
+.game {
+  font-family: "Permanent Marker", cursive;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game__cell-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game__cell {
+  width: 75px;
+  aspect-ratio: 1/1;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  font-size: 50px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game__restart-button {
+  width: fit-content;
+}
