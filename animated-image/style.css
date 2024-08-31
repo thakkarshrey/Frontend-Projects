@@ -13,9 +13,6 @@ body {
   background-size: cover;
   transition: all 0.5s ease-in-out;
   animation: animate 5s ease-in-out infinite;
-  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px; */
-  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -30,6 +27,5 @@ body {
 
   50% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 40%;
-    /* border-radius: 40% 70% 60% 30% / 50% 60% 30% 40%; */
   }
 }
