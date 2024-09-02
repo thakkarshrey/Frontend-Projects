@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.menu {
+  position: relative;
+  border: 1px solid green;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transition: 1s;
+  transform-origin: 130px;
+  transform: rotate(0deg) translateX(100px);
+}
+
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu-toggle {
+  color: black;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 1.5s;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.menu.active .menu-toggle {
+  transform: rotate(315deg);
+}
