@@ -12,6 +12,7 @@ section {
   justify-content: center;
   flex-direction: column;
   background-color: rgb(5, 5, 46);
+  overflow-x: hidden;
 }
 
 section h1 {
@@ -40,22 +41,28 @@ section img {
   max-width: 300px;
 }
 
-.section-1 .animate-bottom-top {
-  transform: translateY(-200px);
+/* section-1 */
+.section-1 .animate-profile {
+  transform: translateY(-100%);
   opacity: 0;
 }
-.section-1.show-animate .animate-bottom-top {
+.section-1.show-animate .animate-profile {
   transform: translateY(0);
   opacity: 1;
 }
 
 .section-1 .animate-left {
-  transform: translateX(-100px);
+  transform: translateX(-100%);
   opacity: 0;
 }
 
+.section-1.show-animate .animate-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .section-1 .animate-right {
-  transform: translateX(100px);
+  transform: translateX(100%);
   opacity: 0;
 }
 
@@ -63,8 +70,62 @@ section img {
   transform: translateX(0);
   opacity: 1;
 }
+/* section-1 */
 
-.section-1.show-animate .animate-left {
+/* section-2 */
+.section-2 .animate-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.section-2.show-animate .animate-right {
   transform: translateX(0);
   opacity: 1;
 }
+/* section-2 */
+
+/* section-3 */
+.section-3 .animate {
+  transform: scale(0.7);
+  opacity: 0;
+}
+
+.section-3.show-animate .animate {
+  transform: scale(1);
+  opacity: 1;
+}
+/* section-3 */
+
+/* section-4 */
+.section-4 h1,
+.section-4 p {
+  position: relative;
+}
+.section-4 .showRight-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(5, 5, 46);
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+.section-4.show-animate .showRight-animation {
+  width: 0;
+}
+/* section-4 */
+
+/* section-5 */
+.section-5 .images img {
+  max-width: 300px;
+  margin: 0 30px;
+  transform: translateX(-100%);
+  transition-delay: calc(0.1s * var(--i));
+  opacity: 0;
+}
+
+.section-5.show-animate .images img {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* section-5 */
