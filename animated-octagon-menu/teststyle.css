@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.menu {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    transform-origin: 130px;
+    transition: all 1s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(95px);
+}
+
+.menu.active li {
+    transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    color: transparent;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    transition: 1s;
+    transition-delay: 0.7s;
+    border-radius: 50%;
+}
+
+.menu.active li a {
+    color: var(--color);
+}
+
+.menu li a::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: var(--color);
+    position: absolute;
+    border-radius: 2px;
+    transform: rotate(calc(var(--i) * 90deg)) translate(0, 25px);
+    transition: height 0.5s, width 0.5s, transform 0.5s;
+    transition-delay: 0s, 0s, 0s;
+}
+
+.menu.active li a::before {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 2px solid var(--color);
+    box-sizing: border-box;
+    transform: rotate(calc(var(--i) * 90deg)) translate(0px, 0px);
+    transition: height 0.5s, width 0.5s, transform 0.5s;
+    transition-delay: 1.5s, 1.5s, 1.5s;
+}
+
+.menu .menu-toggle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all 1.5s;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.menu.active .menu-toggle {
+    transform: rotate(315deg);
+}
