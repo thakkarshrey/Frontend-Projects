@@ -8,15 +8,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+}
+
+#navbar {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .menu {
-  position: relative;
   width: 260px;
   height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 3s;
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  transform: translate(0, 0) rotate(0deg);
+  transform-origin: center;
+  transition-delay: 1.5s;
+  overflow: hidden;
+}
+
+.menu.active {
+  top: calc(50% - 90px);
+  /* Adjust for height of 260px */
+  right: calc(50% - 90px);
+  /* Adjust for width of 260px */
+  transform: translate(calc(-50% + 180px), calc(-50% + 90px)) rotate(calc(-360deg * 5));
+  transform-origin: center;
+  transition-delay: 0s;
 }
 
 .menu li {
@@ -25,11 +49,13 @@ body {
   list-style: none;
   transition: 1s;
   transform-origin: 130px;
-  transition-delay: calc(0.1s * var(--i));
+  transition-delay: calc(0.1s * var(--i) + 0s);
   transform: rotate(0deg) translateX(100px);
 }
 
 .menu.active li {
+  /* Adding 3s delay */
+  transition-delay: calc(0.1s * var(--i) + 3s);
   transform: rotate(calc(360deg / 8 * var(--i)));
 }
 
@@ -43,12 +69,13 @@ body {
   border-radius: 50%;
   transform: rotate(calc(360deg / -8 * var(--i)));
   transition: 1s;
-  transition-delay: 0.5s;
   color: transparent;
   position: relative;
 }
 
 .menu.active li a {
+  /* Adding 3.5s delay */
+  transition-delay: 3.5s;
   color: var(--color);
 }
 
@@ -64,7 +91,6 @@ body {
   transition-delay: 0s, 0s, 0s;
 }
 
-
 .menu.active li a::before {
   width: 60px;
   height: 60px;
@@ -73,7 +99,8 @@ body {
   box-sizing: border-box;
   transform: rotate(calc(var(--i) * 90deg)) translate(0px, 0px);
   transition: height 0.5s, width 0.5s, transform 0.5s;
-  transition-delay: 1.5s, 1.5s, 1.5s;
+  transition-delay: 4.5s, 4.5s, 4.5s;
+  /* Add 3s + 1.5s = 4.5s delay for smooth start */
 }
 
 .menu-toggle {
@@ -88,23 +115,37 @@ body {
   transition: transform 1.5s;
   z-index: 100;
   cursor: pointer;
+  position: absolute;
 }
 
 .menu.active .menu-toggle {
+  transition-delay: 3s;
   transform: rotate(315deg);
 }
 
-
-.octagon {
+/* .octagon {
   width: 60px;
   height: 60px;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   cursor: pointer;
-  animation: animate-octagon 1s linear infinite;
+  transition: 3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, 0) rotate(0deg);
+  transform-origin: center;
+  transition-delay: 1.5s;
+}
+
+.octagon.centered {
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, 0) rotate(calc(-360deg * 5));
+  transform-origin: center;
+  transition-delay: 0s;
 }
 
 .octagon .stick {
@@ -112,16 +153,5 @@ body {
   transform: rotate(calc(360deg / 8 * var(--i))) translate(0, 25px);
   background-color: var(--color);
   width: 20px;
-  height: 2px;
-}
-
-
-@keyframes animate-octagon {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
+  height: 20px;
+} */
