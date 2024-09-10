@@ -5,16 +5,41 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 #navbar {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 5rem;
+  background-color: lightblue;
+  position: fixed;
+}
+
+
+.menu-container {
+  position: relative;
+  /* Relative to avoid interfering with layout */
+  width: 100%;
+  /* Expand to full screen */
+  height: 100vh;
+  /* Initially collapsed */
+  /* Hide any content when inactive */
+  transition: width 3s, height 3s, backdrop-filter 1s 3s;
+}
+
+.menu-container.active {
+  position: fixed;
+  /* Fullscreen when active */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Expand to full screen */
+  height: 100vh;
+  /* Full height of the viewport */
+  backdrop-filter: blur(20px);
+  /* Apply the blur when active */
+  transition: width 0s, height 0s, backdrop-filter 1s 3s;
 }
 
 .menu {
@@ -30,8 +55,9 @@ body {
   transform: translate(0, 0) rotate(0deg);
   transform-origin: center;
   transition-delay: 1.5s;
-  overflow: hidden;
 }
+
+
 
 .menu.active {
   top: calc(50% - 90px);
@@ -43,6 +69,8 @@ body {
   transition-delay: 0s;
 }
 
+
+
 .menu li {
   position: absolute;
   left: 0;
@@ -52,6 +80,8 @@ body {
   transition-delay: calc(0.1s * var(--i) + 0s);
   transform: rotate(0deg) translateX(100px);
 }
+
+
 
 .menu.active li {
   /* Adding 3s delay */
@@ -86,10 +116,11 @@ body {
   height: 2px;
   border-radius: 2px;
   background: var(--color);
-  transform: rotate(calc(var(--i) * 90deg)) translate(0px, 25px);
+  transform: rotate(calc(var(--i) * 90deg)) translate(0, 25px);
   transition: height 0.5s, width 0.5s, transform 0.5s;
   transition-delay: 0s, 0s, 0s;
 }
+
 
 .menu.active li a::before {
   width: 60px;
@@ -97,10 +128,47 @@ body {
   background: #fff;
   border: 2px solid var(--color);
   box-sizing: border-box;
+  rotate: 135deg;
   transform: rotate(calc(var(--i) * 90deg)) translate(0px, 0px);
   transition: height 0.5s, width 0.5s, transform 0.5s;
   transition-delay: 4.5s, 4.5s, 4.5s;
   /* Add 3s + 1.5s = 4.5s delay for smooth start */
+}
+
+.menu.active li:hover a::before {
+  background-color: var(--color);
+  color: #2f363e;
+  box-shadow: 0 0 10px var(--color), 0 0 10px var(--color), 0 0 10px var(--color);
+}
+
+
+.menu.active li:hover a ion-icon {
+  position: relative;
+  color: #2f363e;
+  z-index: 999;
+}
+
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 50px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color);
+  z-index: -1;
+  visibility: hidden;
+  transform: rotate(calc(var(--i) * 0deg)) translate(15px, 0px);
+  transition: left 0.5s 0s, width 0.5s 0s, transform 0.5s 0s, visibility 0.5s 3s;
+}
+
+.menu.active li a::after {
+  left: 10px;
+  width: 40px;
+  visibility: visible;
+  transform: rotate(calc(var(--i) * 45deg)) translate(50px, 0px);
+  /* Delay the left and width change by 3.5 seconds */
+  transition: left 0.5s 3.5s, width 0.5s 3.5s, transform 0.5s 3.5s, visibility 0.5s 0.5s;
 }
 
 .menu-toggle {
