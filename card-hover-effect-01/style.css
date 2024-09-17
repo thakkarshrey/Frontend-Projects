@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: lightcyan;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.container__card {
+    display: grid;
+    row-gap: 3.5rem;
+}
+
+.container__card-article {
+    position: relative;
+    overflow: hidden;
+}
+
+.container__card-image {
+    width: 328px;
+    border-radius: 1.5rem;
+}
+
+.container__card-content {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 1;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    /* opacity: 0; */
+    transition: all 1s;
+}
+
+.container__card-description {
+    font-size: 0.9rem;
+    margin-bottom: 0.45rem;
+    color: gray;
+}
+
+.container__card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: lightslategray;
+    margin-bottom: 0.75rem;
+}
+
+.container__card-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: darkgreen;
+    text-decoration: none;
+    transition: all 1s;
+}
+
+.container__card-button:hover {
+    text-decoration: underline;
+}
+
+.container__card-article:hover .container__card-content {
+    animation: show-card-animation 1s forwards;
+    opacity: 1;
+    transition: all 1s;
+}
+
+@keyframes show-card-animation {
+    50% {
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        transform: translateY(-7rem);
+    }
+}
+
+
+.container__card-article:hover {
+    animation: remove-card-overflow 1s forwards;
+}
+
+@keyframes remove-card-overflow {
+    from {
+        overflow: hidden;
+    }
+
+    to {
+        overflow: initial;
+    }
+}
