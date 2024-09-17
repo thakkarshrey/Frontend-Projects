@@ -11,6 +11,7 @@ body {
     justify-content: center;
     font-family: sans-serif;
     background-color: lightcyan;
+    margin-inline: auto;
 }
 
 img {
@@ -20,11 +21,14 @@ img {
 }
 
 
+.container {
+    display: grid;
+    place-items: center;
+}
+
 .container__card {
     display: grid;
     row-gap: 3.5rem;
-    align-items: center;
-    justify-content: center;
 }
 
 .container__card-article {
