@@ -28,7 +28,8 @@ img {
 
 .container__card {
     display: grid;
-    row-gap: 3.5rem;
+    /* row-gap: 3.5rem; */
+    row-gap: 1rem;
 }
 
 .container__card-article {
@@ -102,6 +103,7 @@ img {
 
     100% {
         transform: translateY(-7rem);
+        z-index: 1;
     }
 }
 
