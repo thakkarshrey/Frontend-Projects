@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    background-color: antiquewhite;
+    margin: 10px;
+}
+
+.timeline-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline {
+    position: relative;
+    z-index: 10;
+}
+
+.timeline-container__line {
+    width: 5px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    left: 22px;
+    z-index: 0;
+}
+
+.timeline .timeline__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.timeline .timeline__content-container {
+    position: relative;
+    padding: 0.2rem 0;
+}
+
+.timeline .timeline__content-container .timeline__arrow {
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 16px;
+    top: 0;
+}
+
+.timeline .timeline__content-container .timeline__content {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+
+@media screen and (min-width:425px) {
+    .timeline .timeline__image {
+        position: absolute;
+    }
+
+    .timeline .timeline__content-container {
+        padding-left: 4rem;
+        padding-top: 0;
+    }
+
+    .timeline .timeline__content-container .timeline__arrow {
+        left: 58px;
+        top: 18px;
+    }
+
+}
+
+@media screen and (min-width:768px) {
+    .timeline .timeline__image {
+        margin-inline: auto;
+        right: 0;
+        left: 0;
+    }
+
+    .timeline-container__line {
+        margin-inline: auto;
+        right: 0;
+        left: 0;
+    }
+
+    .timeline .timeline__content-container {
+        width: 50%;
+    }
+
+    .timeline:nth-child(odd) .timeline__content-container {
+        margin-left: auto;
+        padding-left: 2.5rem;
+    }
+
+    .timeline:nth-child(even) .timeline__content-container {
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: auto;
+        padding-right: 2.5rem;
+    }
+
+
+    .timeline:nth-child(odd) .timeline__content-container .timeline__arrow {
+        left: 33px;
+    }
+
+    .timeline:nth-child(even) .timeline__content-container .timeline__arrow {
+        left: auto;
+        right: 33px;
+    }
+}
