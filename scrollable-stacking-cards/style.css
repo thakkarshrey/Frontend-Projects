@@ -1,0 +1,45 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: sans-serif;
+     height: 100vh;
+ }
+
+ header,
+ footer {
+     background-color: #000;
+     color: white;
+     height: 200px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.2rem;
+ }
+
+ .card-container {
+     position: relative;
+     /* overflow-y: auto;
+     scroll-snap-type: y mandatory; */
+ }
+
+ .card {
+     background-color: blueviolet;
+     color: white;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: sticky;
+     top: 0;
+     /* scroll-snap-align: start; */
+     z-index: 1;
+     font-size: 2rem;
+ }
+
+ .card:nth-child(odd) {
+     background-color: darkblue;
+ }
