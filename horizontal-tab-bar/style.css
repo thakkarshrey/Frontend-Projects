@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightcoral;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: white;
+    padding: 1.5rem;
+    width: calc(100% - 20rem);
+    min-height: 300px;
+}
+
+.tabs-wrapper {
+    display: flex;
+    border-bottom: 1px solid lightblue;
+}
+.tabs-container{
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    height: 2.219rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabs-container a {
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    list-style: none;
+    padding-left:0.6rem;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    user-select: none;
+    text-decoration: none;
+    color: black;
+    z-index: 2;
+}
+
+.tabs-container .tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #indicator{
+    position: absolute;
+    height: 2.219rem;
+    left: 0;
+    background: url("./indicator.svg") right;
+    color: white;
+    z-index: 1;
+    transition: all ease 0.5s;
+    border-radius: 0.5rem 0 0 0;
+    display: flex;
+} */
+
+#indicator{
+    position: absolute;
+    height: 2.219rem;
+    left: 0;
+    width: 60px;
+    z-index: 1;
+    transition: all ease 0.5s;
+    display: flex;
+}
+
+#indicator .indicator-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0097E9;
+    border-radius: 0.5rem 0 0 0;
+}
+
+#indicator .svg-container{
+    position: absolute;
+    right: -39px;
+}
+
+.active{
+    color: white;
+}

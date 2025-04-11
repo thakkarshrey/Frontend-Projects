@@ -1,0 +1,13 @@
+#canvas1{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: black;
+    border: 1px solid white;
+    width: 620px;
+    height: 413px;
+}
+
+body{
+    background: black;
+}

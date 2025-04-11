@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+    <div class="tabs-wrapper">
+        <nav class="tabs-container">
+                <a href="#">Home</a>
+            <a href="#">Employee Management</a>
+            <a href="#">Lead</a>
+            <a href="#">Document</a>
+            <a href="#">Campaigns</a>
+            <div id="indicator">
+                <div class="indicator-container">
+
+                </div>
+                <div class="svg-container">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="39"
+                    height="35.5"
+                    viewBox="0 0 39 35.5"
+                    fill="none"
+                    >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 0V35.9999H38.5774L16.5 9.24023C15.3625 7.97523 14.4363 6.87725 13.6333 5.92541C9.64289 1.19513 8.69721 0.0741152 0 0Z"
+                        fill="#0097E9"
+                    />
+                    </svg>
+                </div>
+            </div>
+
+        </nav>
+                                
+    </div>
+    </div>
+    <script>
+        let indicator = document.querySelector("#indicator")
+        let item = document.querySelectorAll(".tabs-container a")
+
+        function indicatorMove(e){
+            indicator.style.left = e.offsetLeft + "px"
+            indicator.style.width = e.offsetWidth + "px"    
+        }
+
+        item.forEach((element,index)=>{
+            element.addEventListener("click",function(e){
+                indicatorMove(e.target)
+            })
+        })
+
+    </script>
+</body>
+</html>

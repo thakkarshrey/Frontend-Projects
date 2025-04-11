@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header">
+      <a href="#" class="logo">Shrey Thakkar</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div></div>
+    </header>
+    <section id="scene">
+      <h1 id="text">Parallex Website</h1>
+      <img src="./public/assets/images/hill1.png" id="img1" />
+      <img src="./public/assets/images/hill2.png" id="img2" />
+      <img src="./public/assets/images/hill3.png" id="img3" />
+      <img src="./public/assets/images/hill4.png" id="img4" />
+      <img src="./public/assets/images/hill5.png" id="img5" />
+      <img src="./public/assets/images/leaf.png" id="leaf" />
+      <img src="./public/assets/images/plant.png" alt="plant" />
+      <img src="./public/assets/images/tree.png" alt="tree" />
+    </section>
+    <div class="section-two">
+      <h2>Parallex Scrolling Effects</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        perspiciatis fugit similique veritatis exercitationem ex, enim quae
+        quibusdam harum. Sequi ab porro, unde iusto quo natus consectetur
+        officia placeat explicabo enim ad a, ipsum, quam provident minima
+        sapiente quas quaerat repellat soluta perferendis? Quam est officia quod
+        esse obcaecati rem laudantium earum, facere veritatis impedit, veniam ut
+        distinctio eos ab accusantium! Quia eos reiciendis reprehenderit
+        voluptas autem, architecto vitae similique aliquam consequatur?
+        Explicabo libero facere corporis, voluptates laborum magnam, sint
+        maxime, sequi vel saepe dolorem. Quia quo architecto dolorum tempora non
+        totam voluptatibus doloribus incidunt voluptatum, est atque provident
+        molestiae?
+      </p>
+    </div>
+    <script>
+      let text = document.getElementById("text");
+      let img1 = document.getElementById("img1");
+      let img2 = document.getElementById("img2");
+      let img3 = document.getElementById("img3");
+      let img4 = document.getElementById("img4");
+      let img5 = document.getElementById("img5");
+      let leaf = document.getElementById("leaf");
+      let plant = document.getElementById("plant");
+      let tree = document.getElementById("tree");
+
+      window.addEventListener("scroll", () => {
+        let value = window.scrollY;
+        text.style.marginTop = `${value * 2.5}px`;
+        leaf.style.top = `-${value * 1}px`;
+        leaf.style.left = `${value * 1}px`;
+        img5.style.left = `${value * 1}px`;
+        img4.style.left = `-${value * 1}px`;
+        img1.style.top = `${value * 1}px`;
+      });
+    </script>
+  </body>
+</html>
